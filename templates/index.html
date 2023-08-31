@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    background-image: url();
+    background-size: cover ;
+    font-family: Arial, sans-serif;
+
+    color: navy;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid navy;
+    border-radius: 10px;
+    background-color: white;
+    align-items: right;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  input[type="text"] {
+    width: 97%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid navy;
+    border-radius: 5px;
+  }
+  input[type="number"] {
+    width: 97%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid navy;
+    border-radius: 5px;
+  }
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid navy;
+    border-radius: 5px;
+  }
+  button[type="submit"] {
+    padding: 10px 20px;
+    text-align: center;
+    background-color: navy;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button[type="submit"]:hover {
+    background-color: #001f3f; 
+  }
+</style>
+<title>MBA Students Placement Prediction</title>
+</head>
+<body>
+    <div>
+        <h1>MBA Students Placement Prediction</h1>
+        <hr/>
+    </div>
+    <form action="/" method="post">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <label for="secondaryEducation">Secondary Education Percentage (10th grade):</label>
+        <input type="text" id="secondaryEducation" name="secondaryEducation">
+
+        <label for="boardSecondary">Board of Education:</label>
+        <select id="boardSecondary" name="boardSecondary">
+            <option value="central">Central</option>
+            <option value="others">Other</option>
+        </select>
+
+        <label for="higherSecondaryEducation">Higher Secondary Education Percentage:</label>
+        <input type="text" id="higherSecondaryEducation" name="higherSecondaryEducation">
+
+        <label for="boardHigherSecondary">Board of Education:</label>
+        <select id="boardHigherSecondary" name="boardHigherSecondary">
+            <option value="central">Central</option>
+            <option value="others">Other</option>
+        </select>
+
+        <label for="specialization">Specialization in Higher Secondary Education:</label>
+        <select id="specialization" name="specialization">
+            <option value="commerce">Commerce</option>
+            <option value="science">Science</option>
+            <option value="others">Other</option>
+        </select>
+
+        <label for="degreePercentage">Degree Percentage:</label>
+        <input type="number" id="degreePercentage" name="degreePercentage" step="0.01">
+
+        <label for="undergraduate">Under Graduate - Field of degree education:</label>
+        <select id="undergraduate" name="undergraduate">
+            <option value="commmgmt">Comm&Mgmt</option>
+            <option value="scitech">Sci&Tech</option>
+            <option value="others">Other</option>
+        </select>
+
+        <label for="workexperience">Work Experience:</label>
+        <select id="workexperience" name="workexperience">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="employtest">Employability test Percentage:</label>
+        <input type="number" id="employtest" name="employtest">
+
+        <label for="pgmba">Post Graduation(MBA) - Specialization:</label>
+        <select id="pgmba" name="pgmba">
+            <option value="mktfin">Mkt&Fin</option>
+            <option value="mkthr">Mkt&HR</option>
+        </select>
+
+        <label for="mbapercentage">MBA Percentage:</label>
+        <input type="number" id="mbapercentage" name="mbapercentage">
+        
+        <button type="submit">Submit</button>
+    </form>
+    {% if flag %}
+    <div>
+        <h1>Output</h1>
+        <hr/>
+        <p>{{ output }}</p>
+    </div>
+    <div>
+      <h1>API Response</h1>
+      <hr/>
+      <p>{{ res }}</p>
+  </div>
+    {% endif %}
+</body>
+</html>
